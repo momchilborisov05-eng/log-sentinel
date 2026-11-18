@@ -1,0 +1,108 @@
+{
+ "env": {
+  "date": "2026-11-18",
+  "python": "Python 3.12.3",
+  "platform": "Windows",
+  "version": "1.0.0",
+  "seconds": 26.0
+ },
+ "quality": {
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "families": {
+   "metric": {
+    "name": "Metric anomalies (ensemble)",
+    "alerts": 76,
+    "false_positives": 2,
+    "precision": 0.974,
+    "recall": 1.0,
+    "detected": 50,
+    "in_scope": 50,
+    "median_time_to_detect_min": 0.0
+   },
+   "trend": {
+    "name": "Trend forecasts (Holt, ETA <= 24h; gradual incidents)",
+    "alerts": 27,
+    "false_positives": 1,
+    "precision": 0.963,
+    "recall": 1.0,
+    "detected": 20,
+    "in_scope": 20,
+    "median_time_to_detect_min": 180.0
+   },
+   "log": {
+    "name": "Log patterns (new / spiking)",
+    "alerts": 132,
+    "false_positives": 10,
+    "precision": 0.924,
+    "recall": 1.0,
+    "detected": 50,
+    "in_scope": 50,
+    "median_time_to_detect_min": 0.0
+   },
+   "all": {
+    "name": "Combined",
+    "alerts": 235,
+    "false_positives": 13,
+    "precision": 0.945,
+    "recall": 1.0,
+    "detected": 50,
+    "in_scope": 50,
+    "median_time_to_detect_min": 0.0
+   }
+  },
+  "forecast": {
+   "made": 79,
+   "total": 80,
+   "within_80_band": 78,
+   "mae_min": 44.0,
+   "median_abs_error_min": 30,
+   "mae_by_hours_before_end": {
+    "3": 62.5,
+    "2": 44.8,
+    "1": 38.2,
+    "0": 30.2
+   },
+   "median_true_eta_min": 202.5
+  },
+  "median_time_to_detect_by_incident_min": {
+   "payment_timeouts": 0.0,
+   "bad_deploy": 0.0,
+   "cpu_saturation": 0.0,
+   "memory_leak": 60.0,
+   "connection_leak": 240.0
+  },
+  "false_positive_labels": [
+   "anomaly:latency_p95_ms",
+   "log_new:16",
+   "trend:cpu_pct"
+  ],
+  "analysis_ms_median": 885.5
+ },
+ "throughput": {
+  "service_metric_points_per_s": 369687,
+  "service_log_lines_per_s": 95841,
+  "full_analysis_ms": 323.5,
+  "dataset": {
+   "metric_points": 10085,
+   "log_lines": 9037,
+   "templates": 17
+  },
+  "api_metric_points_per_s": 85615,
+  "api_log_lines_per_s": 39075,
+  "api_batch": {
+   "metrics": 1000,
+   "logs": 500
+  }
+ }
+}

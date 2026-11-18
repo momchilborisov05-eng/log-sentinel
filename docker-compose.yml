@@ -1,0 +1,20 @@
+services:
+  sentinel:
+    build: .
+    image: log-sentinel:latest
+    ports:
+      - "8016:8000"
+    env_file:
+      - path: .env
+        required: false          # without it: rule-based summaries, demo data on first start
+    volumes:
+      - sentinel-data:/data      # SQLite database
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+volumes:
+  sentinel-data:
