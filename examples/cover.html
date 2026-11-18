@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Log Sentinel</title><style>
+body { margin:0; width:1280px; height:720px; overflow:hidden; font-family:"Segoe UI",system-ui,sans-serif; background:linear-gradient(135deg,#0b0714,#2a1243 52%,#4c1d6e); color:#fff; position:relative; }
+body::after { content:""; position:absolute; inset:0; background:radial-gradient(circle at 85% 10%, rgba(236,72,153,.22), transparent 45%); pointer-events:none; }
+.left { position:absolute; left:64px; top:52px; width:540px; z-index:1; }
+.badge { display:inline-block; background:rgba(255,255,255,.15); padding:7px 14px; border-radius:99px; font-size:15px; margin-bottom:18px; }
+h1 { font-size:58px; line-height:1.02; margin:0 0 10px; letter-spacing:-1px; }
+.tag { font-size:21px; color:#f5d0fe; margin:0 0 20px; }
+pre { background:#020617; color:#cbd5e1; border-radius:12px; padding:13px 16px; font:13.5px/1.62 Consolas, monospace; margin:0 0 20px; box-shadow:0 10px 30px rgba(0,0,0,.35); white-space:pre-wrap; }
+pre .k { color:#7dd3fc; } pre .w { color:#fbbf24; } pre .g { color:#6ee7b7; } pre .m { color:#94a3b8; } pre .r { color:#fca5a5; }
+ul { list-style:none; padding:0; margin:0; font-size:18.5px; line-height:1.7; }
+li::before { content:"✓  "; color:#f0abfc; font-weight:700; }
+.shot { position:absolute; right:40px; top:92px; width:600px; height:540px; border-radius:14px; overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,.55); background:#0a0b10; border:1px solid rgba(255,255,255,.12); z-index:1; }
+.shot img { width:1000px; display:block; margin-left:-40px; margin-top:-55px; }
+</style></head><body>
+<div class="left">
+  <span class="badge">Python · FastAPI · time series · Claude API · Docker</span>
+  <h1>Log Sentinel</h1>
+  <p class="tag">Predicts service failures hours before they happen</p>
+  <pre><span class="k">POST</span> /api/metrics  <span class="g">→ 85,615 points/s</span>
+<span class="k">detect</span>   seasonal + z-score + EWMA <span class="g">→ precision 0.97</span>
+<span class="k">logmine</span>  "Connection pool wait &lt;NUM&gt;ms" <span class="w">→ spiking x7</span>
+<span class="k">forecast</span> db_connections <span class="r">→ exhausted in ~1h 50m</span>
+<span class="m">  recall 1.00 on 50 injected incidents, 10 seeds</span></pre>
+  <ul>
+    <li>Anomaly ensemble that understands daily seasonality</li>
+    <li>Log template mining flags new and spiking errors</li>
+    <li>Time-to-threshold forecasts with an 80% band</li>
+    <li>Incident summary by Claude, rule-based offline</li>
+  </ul>
+</div>
+<div class="shot"><img src="screenshot-dashboard.png" alt=""></div>
+</body></html>
